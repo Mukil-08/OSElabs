@@ -1,0 +1,242 @@
+<html>
+<head>
+<style>
+
+body {
+   margin: 0px;;
+}
+.main {
+width:50%;
+height:90%;
+}
+.grid-container {
+  position: relative;
+  display: grid;
+  row-gap: 70px;
+  column-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+}
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+		row-gap: 30px;
+		margin-top: 10%;
+      }
+.inner img {
+        width: 100px;
+        height: 100px;
+        margin-left: 3px;
+      }
+	.txt {
+	width : 500px;
+	height: 500px;
+	}
+	.btn {
+  display: grid;
+  column-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  margin-left: 100px;
+  }
+  .btn1 {
+  background-color: green;
+  padding :20px 30px;
+  color : white;
+  border: 2px solid green;
+  border-radius: 10px;
+}
+.btn1:hover {
+  background-color: #e9e9e9;
+  color: green;
+
+}
+  /* }
+  .btn2 {
+  background-color: white;
+  padding :20px 30px;
+  border: 2px solid green;
+  color : green;}
+   */
+  .cart {
+    position: absolute;
+    right: 40px;
+    background-color: whitesmoke;
+  width: 1400px;
+  text-align:center;
+  border: 3x solid blue;
+  overflow-y:scroll;
+  height:85%;
+  margin-top: 5px;
+  padding : 10px;
+  display: none;
+  }
+  .cart img {
+  padding: 20px;
+  }
+  
+  .cart div {
+  border: 2px solid black;
+  }
+  .title1 img {
+  width : 100px;
+  height: 100px;
+  align-items:left;
+  }
+  .cart .title1 {
+  color: red;
+  }
+  
+  .cart_s {
+   padding: none;
+  }
+
+/*Navigation bar*/
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: green;
+  color: white;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+
+.topnav .search-container button:hover {
+  background: #ccc;
+  border: 1px solid black;
+}
+
+.topnav .search-container {
+    float: right;
+  }
+  
+  .topnav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+
+  
+</style>
+
+<script>
+function addtocart(){
+	var x = document.createElement("IMG");
+  x.setAttribute("src", "boat1.png");
+  x.setAttribute("width", "304");
+  x.setAttribute("height", "228");
+	var y = document.createElement("BUTTON");
+	t = document.createTextNode("Remove");
+	y.appendChild(t);
+  document.getElementById("title").appendChild(x);
+  document.getElementById("title").appendChild(y).onclick = function () { 
+  var list = document.getElementById("title");
+  list.removeChild(list.firstElementChild); 
+  list.removeChild(list.firstElementChild); };
+  
+}
+function showcart(){;
+                var div = document.getElementById("cart");  
+         if (div.style.display !== "none") 
+         {  
+             div.style.display = "none";  
+         }  
+         else
+         {  
+             div.style.display = "block";  
+         }
+            }
+
+function boat1() {
+  document.getElementById("main").src = "boat1.png";
+}
+function boat2() {
+  document.getElementById("main").src = "boat2.png";
+}
+function boat3() {
+  document.getElementById("main").src = "boat3.png";
+}
+</script>
+
+</head>
+
+
+<body>
+  <div style="background-color: ;">
+<img style="margin: 50px;height: 50px;margin-top: 0px; margin-bottom: 0px;margin-left: 0px;margin-right: 10px;float: left;" src="ose_w.png">
+<h1 style="font-size: 40px;margin-bottom: 10px;">OSELabs</h1>
+    </div>
+
+<header>
+  <div class="topnav">
+    <a class="active" href="new.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <div class="search-container">
+        <input type="text" placeholder="Search..." name="search">
+        <button class="cart" onclick="showcart()"><img src="cart.png"></button>
+        <button style="padding:0px 5px;background-color:white;float:center" onclick="showcart()"><img style="width: 30px;height: 32px;background-position: center;padding: 0px;" src="cart.png"></button>    
+        <button style="padding: 0px;"><img style="width: 30px;height: 32px;background-position: center;padding: 0px;" src="search.gif"></button>  
+    </div>        
+
+      
+</div>
+</header>
+<div class="grid-container">
+
+
+<div class="inner">
+<button style="border: 1px solid black;background-color: white;" onclick="boat1()"><img src="boat1.png"></button>
+<button style="border: 1px solid black;background-color: white;" onclick="boat2()"><img src="boat2.png"></button>
+<button style="border: 1px solid black;background-color: white;" onclick="boat3()"><img src="boat3.png"></button>
+</div>
+
+<img class="main" id="main" src="boat1.png">
+
+<div class="txt">
+	<h1>boAt Rockerz 400 Bluetooth On Ear Headphones With Mic With Upto 8 Hours Playback & Soft Padded Ear Cushionss</h1>
+  <a href="new3.html"><button style="border: 1px solid black;margin-bottom: 50px;background-color: white;border-radius: 50px;padding: 10px;"><img style="width: 50px; height: 50px;" src="boat1_y.png"> </button></a>
+<div class="btn">
+	<button class="btn1" onclick="addtocart()">Add to cart</button>
+	
+</div>  
+</div>
+<div class="cart" id="cart">
+  <div class="title"> CART :</div>
+  <div id="title" class="title1" ></div>
+ </div>
+</body>
+</html>
